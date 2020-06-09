@@ -1,0 +1,49 @@
+{
+  "variables": {
+    "disk_size": "20480",
+    "version": "2512.2",
+    "iso_url": "https://stable.release.flatcar-linux.net/amd64-usr/2512.2.0/flatcar_production_iso_image.iso",
+    "iso_checksum": "5a65678ef0b305483229c8f2b247f0f6cd56e73a38aad4e9ea557b8a730d7132bfc528b23042db787c3bdc38d6ab51c8699c7762d23e6eebdcd09f0cd621484e",
+    "iso_checksum_type": "sha512"
+  },
+  "builders": [
+    {
+      "name": "flatcar-linux-{{user `version`}}-amd64-libvirt",
+      "type": "qemu",
+      "accelerator": "kvm",
+      "qemuargs": [
+        ["-m", "4096"],
+        ["-smp", "4"],
+        ["-device", "virtio-scsi-pci,id=scsi0"],
+        ["-device", "scsi-hd,bus=scsi0.0,drive=drive0"],
+        ["-object", "rng-random,filename=/dev/urandom,id=rng0"],
+        ["-device", "virtio-rng-pci,rng=rng0"]
+      ],
+      "headless": false,
+      "http_directory": ".",
+      "format": "qcow2",
+      "disk_size": "{{user `disk_size`}}",
+      "disk_interface": "virtio-scsi",
+      "disk_discard": "unmap",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "boot_wait": "2m",
+      "boot_command": [
+        "sudo su -l<enter>",
+        "<wait>",
+        "wget http://{{.HTTPIP}}:{{.HTTPPort}}/ignition.yml<enter>",
+        "<wait>",
+        "udevadm info --name sda<enter>",
+        "<wait60>",
+        "time flatcar-install -d /dev/sda -C stable -i ignition.yml<enter>",
+        "<wait60><wait60><wait60>",
+        "reboot<enter>"
+      ],
+      "shutdown_command": "poweroff"
+    }
+  ]
+}

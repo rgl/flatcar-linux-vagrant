@@ -1,7 +1,7 @@
 VERSION=$(shell jq -r .variables.version flatcar-linux.json)
 
 help:
-	@echo type make build-libvirt or make build-virtualbox
+	@echo type make build-libvirt
 
 build-libvirt: flatcar-linux-${VERSION}-amd64-libvirt.box
 
@@ -18,7 +18,8 @@ tmp/ignition.json: flatcar-linux-config.yml tmp/ct
 
 tmp/ct:
 	mkdir -p tmp
-	wget -qO $@ https://github.com/coreos/container-linux-config-transpiler/releases/download/v0.9.0/ct-v0.9.0-x86_64-unknown-linux-gnu
-	chmod +x $@
+	wget -qO $@.tmp https://github.com/coreos/container-linux-config-transpiler/releases/download/v0.9.0/ct-v0.9.0-x86_64-unknown-linux-gnu
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 .PHONY: buid-libvirt

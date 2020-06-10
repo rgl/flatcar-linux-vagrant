@@ -1,0 +1,8 @@
+Vagrant.configure(2) do |config|
+  config.ssh.username = 'core'
+  config.ssh.password = 'core'
+  config.vm.provider 'libvirt' do |lv, config|
+    lv.random :model => 'random'
+    config.vm.synced_folder '.', '/vagrant', nfs: true, nfs_version: 4, nfs_udp: false
+  end
+end

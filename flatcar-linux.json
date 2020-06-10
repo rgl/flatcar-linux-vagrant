@@ -19,7 +19,7 @@
         ["-object", "rng-random,filename=/dev/urandom,id=rng0"],
         ["-device", "virtio-rng-pci,rng=rng0"]
       ],
-      "headless": false,
+      "headless": true,
       "http_directory": ".",
       "format": "qcow2",
       "disk_size": "{{user `disk_size`}}",
@@ -41,6 +41,13 @@
         "reboot<enter>"
       ],
       "shutdown_command": "sudo poweroff"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "output": "{{.BuildName}}.box",
+      "vagrantfile_template": "Vagrantfile.template"
     }
   ]
 }

@@ -5,7 +5,7 @@ help:
 
 build-libvirt: flatcar-linux-${VERSION}-amd64-libvirt.box
 
-flatcar-linux-${VERSION}-amd64-libvirt.box: tmp/ignition.json provision.sh flatcar-linux.json Vagrantfile.template
+flatcar-linux-${VERSION}-amd64-libvirt.box: tmp/ignition.json flatcar-linux.json Vagrantfile.template
 	rm -f flatcar-linux-${VERSION}-amd64-libvirt.box
 	CHECKPOINT_DISABLE=1 PACKER_KEY_INTERVAL=10ms PACKER_LOG=1 PACKER_LOG_PATH=$@-packer.log \
 		packer build -only=flatcar-linux-${VERSION}-amd64-libvirt -on-error=abort flatcar-linux.json

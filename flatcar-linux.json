@@ -4,8 +4,7 @@
     "version": "2512.2",
     "channel": "stable",
     "iso_url": "https://stable.release.flatcar-linux.net/amd64-usr/2512.2.0/flatcar_production_iso_image.iso",
-    "iso_checksum": "5a65678ef0b305483229c8f2b247f0f6cd56e73a38aad4e9ea557b8a730d7132bfc528b23042db787c3bdc38d6ab51c8699c7762d23e6eebdcd09f0cd621484e",
-    "iso_checksum_type": "sha512"
+    "iso_checksum": "sha512:5a65678ef0b305483229c8f2b247f0f6cd56e73a38aad4e9ea557b8a730d7132bfc528b23042db787c3bdc38d6ab51c8699c7762d23e6eebdcd09f0cd621484e"
   },
   "builders": [
     {
@@ -28,7 +27,6 @@
       "disk_discard": "unmap",
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
-      "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "ssh_username": "core",
       "ssh_password": "core",
       "ssh_wait_timeout": "60m",

@@ -1,3 +1,5 @@
+# see https://docs.flatcar-linux.org/container-linux-config-transpiler/doc/configuration/
+
 passwd:
   users:
     - name: vagrant

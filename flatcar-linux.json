@@ -34,12 +34,9 @@
       "boot_wait": "2m",
       "boot_command": [
         "sudo su -l<enter>",
-        "<wait>",
-        "wget http://{{.HTTPIP}}:{{.HTTPPort}}/ignition.yml<enter>",
-        "<wait>",
-        "udevadm info --name sda<enter>",
-        "<wait60>",
-        "time flatcar-install -d /dev/sda -C stable -i ignition.yml<enter>",
+        "set -eu<enter>",
+        "wget -q http://{{.HTTPIP}}:{{.HTTPPort}}/tmp/ignition.json<enter><wait>",
+        "time flatcar-install -d /dev/sda -C stable -i ignition.json<enter>",
         "<wait60><wait60><wait60>",
         "reboot<enter>"
       ],

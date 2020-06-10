@@ -28,8 +28,8 @@
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
+      "ssh_username": "core",
+      "ssh_password": "core",
       "ssh_wait_timeout": "60m",
       "boot_wait": "2m",
       "boot_command": [
@@ -40,7 +40,7 @@
         "<wait60><wait60><wait60>",
         "reboot<enter>"
       ],
-      "shutdown_command": "poweroff"
+      "shutdown_command": "sudo poweroff"
     }
   ]
 }

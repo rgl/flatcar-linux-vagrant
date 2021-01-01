@@ -1,10 +1,10 @@
 {
   "variables": {
     "disk_size": "20480",
-    "version": "2512.2",
+    "version": "2605.10.0",
     "channel": "stable",
-    "iso_url": "https://stable.release.flatcar-linux.net/amd64-usr/2512.2.0/flatcar_production_iso_image.iso",
-    "iso_checksum": "sha512:5a65678ef0b305483229c8f2b247f0f6cd56e73a38aad4e9ea557b8a730d7132bfc528b23042db787c3bdc38d6ab51c8699c7762d23e6eebdcd09f0cd621484e"
+    "iso_url": "https://stable.release.flatcar-linux.net/amd64-usr/2605.10.0/flatcar_production_iso_image.iso",
+    "iso_checksum": "sha512:f0a457ba70b2edf12aeb8e291b178767e7adf372cb3abd731dfdefcc303d5f90da429ea302092261df6f578e248201112076a75f8a4ace0f9c76cd9b3d2f13c6"
   },
   "builders": [
     {
@@ -32,11 +32,11 @@
       "ssh_wait_timeout": "60m",
       "boot_wait": "2m",
       "boot_command": [
-        "sudo su -l<enter>",
+        "sudo -i<enter>",
         "set -eu<enter>",
         "wget -q http://{{.HTTPIP}}:{{.HTTPPort}}/tmp/ignition.json<enter><wait>",
         "time flatcar-install -d /dev/sda -C {{user `channel`}} -i ignition.json<enter>",
-        "<wait60><wait60><wait60>",
+        "<wait3m>",
         "reboot<enter>"
       ],
       "shutdown_command": "sudo poweroff"

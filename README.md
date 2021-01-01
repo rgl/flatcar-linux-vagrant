@@ -54,14 +54,14 @@ The following table describes the steps used to install flatcar-linux.
 
 **NB** This Packer `boot_command` method of installation is quite brittle, if you are having trouble installing, try increasing the install wait timeout.
 
-| step                                   | boot_command                                                                    |
-|---------------------------------------:|---------------------------------------------------------------------------------|
-| switch to root                         | `sudo su -l<enter>`                                                             |
-| configure the shell to abort on error  | `set -eu<enter>`                                                                |
-| download the ignition configuration    | `wget -q http://{{.HTTPIP}}:{{.HTTPPort}}/tmp/ignition.json<enter><wait>`       |
-| install to disk                        | `time flatcar-install -d /dev/sda -C stable -i ignition.json<enter>`            |
-| wait 3m for the installation to finish | `<wait60><wait60><wait60>`                                                      |
-| reboot to the installed system         | `reboot<enter>`                                                                 |
+| step                                   | boot_command                                                                 |
+|---------------------------------------:|------------------------------------------------------------------------------|
+| switch to root                         | `sudo -i<enter>`                                                             |
+| configure the shell to abort on error  | `set -eu<enter>`                                                             |
+| download the ignition configuration    | `wget -q http://{{.HTTPIP}}:{{.HTTPPort}}/tmp/ignition.json<enter><wait>`    |
+| install to disk                        | `time flatcar-install -d /dev/sda -C stable -i ignition.json<enter>`         |
+| wait 3m for the installation to finish | `<wait3m>`                                                                   |
+| reboot to the installed system         | `reboot<enter>`                                                              |
 
 # Reference
 

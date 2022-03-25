@@ -1,4 +1,4 @@
-This builds a Vagrant [flatcar-linux](https://flatcar-linux.org/) Base Box.
+This builds a Vagrant [Flatcar Container Linux `flatcar-linux`](https://www.flatcar.org/) Base Box.
 
 # Usage
 
@@ -65,5 +65,5 @@ The following table describes the steps used to install flatcar-linux.
 
 # Reference
 
-* [Installing Flatcar Container Linux to disk](https://docs.flatcar-linux.org/os/installing-to-disk/)
-* [Configuration Specification](https://docs.flatcar-linux.org/container-linux-config-transpiler/doc/configuration/)
+* [Installing Flatcar Container Linux to disk](https://www.flatcar.org/docs/latest/installing/bare-metal/installing-to-disk/)
+* [Configuration Specification](https://www.flatcar.org/docs/latest/provisioning/config-transpiler/configuration/)

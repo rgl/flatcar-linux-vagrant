@@ -18,7 +18,7 @@ tmp/ignition.json: flatcar-linux-config.yml tmp/ct
 
 tmp/ct:
 	mkdir -p tmp
-	wget -qO $@.tmp https://github.com/coreos/container-linux-config-transpiler/releases/download/v0.9.0/ct-v0.9.0-x86_64-unknown-linux-gnu
+	wget -qO $@.tmp https://github.com/flatcar-linux/container-linux-config-transpiler/releases/download/v0.9.3/ct-v0.9.3-x86_64-unknown-linux-gnu
 	chmod +x $@.tmp
 	mv $@.tmp $@
 

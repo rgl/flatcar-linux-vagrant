@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = 'flatcar-linux-2605.10.0-amd64'
+  config.vm.box = 'flatcar-linux-3033.2.4-amd64'
 
   config.vm.hostname = 'example.test'
 

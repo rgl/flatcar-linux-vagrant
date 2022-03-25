@@ -1,10 +1,10 @@
 {
   "variables": {
     "disk_size": "20480",
-    "version": "2605.10.0",
+    "version": "3033.2.4",
     "channel": "stable",
-    "iso_url": "https://stable.release.flatcar-linux.net/amd64-usr/2605.10.0/flatcar_production_iso_image.iso",
-    "iso_checksum": "sha512:f0a457ba70b2edf12aeb8e291b178767e7adf372cb3abd731dfdefcc303d5f90da429ea302092261df6f578e248201112076a75f8a4ace0f9c76cd9b3d2f13c6"
+    "iso_url": "https://stable.release.flatcar-linux.net/amd64-usr/3033.2.4/flatcar_production_iso_image.iso",
+    "iso_checksum": "sha512:f0b0a8d35e4dfa98ae0ab7f751868f28e75147630d92047cbe32036e5ede3d4dff958d2976eae6e24d33f4f5b3b72685c54b06d23447457900a3b97edb7a87cb"
   },
   "builders": [
     {

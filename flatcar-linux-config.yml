@@ -1,4 +1,4 @@
-# see https://docs.flatcar-linux.org/container-linux-config-transpiler/doc/configuration/
+# see https://www.flatcar.org/docs/latest/provisioning/config-transpiler/configuration/
 
 passwd:
   users:

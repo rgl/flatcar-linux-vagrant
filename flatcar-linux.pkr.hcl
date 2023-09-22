@@ -15,7 +15,7 @@ packer {
 
 variable "version" {
   type    = string
-  default = "3033.2.4"
+  default = "3510.2.8"
 }
 
 variable "vagrant_box" {
@@ -29,12 +29,12 @@ variable "channel" {
 
 variable "iso_url" {
   type    = string
-  default = "https://stable.release.flatcar-linux.net/amd64-usr/3033.2.4/flatcar_production_iso_image.iso"
+  default = "https://stable.release.flatcar-linux.net/amd64-usr/3510.2.8/flatcar_production_iso_image.iso"
 }
 
 variable "iso_checksum" {
   type    = string
-  default = "sha512:f0b0a8d35e4dfa98ae0ab7f751868f28e75147630d92047cbe32036e5ede3d4dff958d2976eae6e24d33f4f5b3b72685c54b06d23447457900a3b97edb7a87cb"
+  default = "sha512:508862c9fb5e556d251fdb25b6b1628810efd3f3ce78b13feefa2353a3245523dad6aaba6e854bddbe9dd600d53abd2fe98665f57881e292c01f7016922dcab5"
 }
 
 variable "disk_size" {

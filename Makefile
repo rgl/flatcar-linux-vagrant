@@ -3,7 +3,7 @@ SHELL=bash
 
 # see https://www.flatcar.org/releases
 # see https://stable.release.flatcar-linux.net/amd64-usr/
-VERSION=3033.2.4
+VERSION=3510.2.8
 
 help:
 	@echo type make build-libvirt

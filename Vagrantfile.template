@@ -2,7 +2,12 @@ Vagrant.configure(2) do |config|
   config.ssh.username = 'core'
   config.ssh.password = 'core'
   config.vm.provider 'libvirt' do |lv, config|
+    lv.machine_type = 'q35'
+    lv.graphics_type = 'spice'
+    lv.video_type = 'qxl'
     lv.random :model => 'random'
+    lv.disk_bus = 'scsi'
+    lv.disk_device = 'sda'
     config.vm.synced_folder '.', '/vagrant', nfs: true, nfs_version: 4, nfs_udp: false
   end
 end

@@ -44,6 +44,7 @@ variable "disk_size" {
 
 source "qemu" "flatcar-linux" {
   accelerator  = "kvm"
+  machine_type = "q35"
   cpus         = 4
   memory       = 4 * 1024
   qemuargs = [

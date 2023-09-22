@@ -1,3 +1,4 @@
+# see https://www.flatcar.org/docs/latest/provisioning/ignition/
 # see https://www.flatcar.org/docs/latest/provisioning/config-transpiler/configuration/
 
 passwd:

@@ -84,6 +84,13 @@ build {
     "source.qemu.flatcar-linux"
   ]
 
+  provisioner "shell" {
+    execute_command = "sudo -S {{ .Vars }} bash {{ .Path }}"
+    scripts = [
+      "provision-sysprep.sh",
+    ]
+  }
+
   post-processor "vagrant" {
     output               = var.vagrant_box
     vagrantfile_template = "Vagrantfile.template"
